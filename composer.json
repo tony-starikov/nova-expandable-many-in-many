@@ -1,0 +1,48 @@
+{
+    "name": "tony-starikov/nova-expandable-many-in-many",
+    "description": "Laravel Nova - Expandable Many In Many",
+    "keywords": [
+        "laravel",
+        "nova"
+    ],
+    "authors": [
+        {
+          "name": "Tony Starikov",
+          "email": "tony.starikov.1992@gmail.com"
+        }
+      ],
+    "license": "MIT",
+    "require": {
+        "php": "^7.4|^8.0",
+        "laravel/nova": "^4.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.16"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tony\\ExpandableMany\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Tony\\ExpandableMany\\ExpandableManyServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "repositories": [
+    {
+        "type": "composer",
+        "url": "https://nova.laravel.com"
+    }
+    ],
+    "scripts": {
+        "php-cs-fixer": "vendor/bin/php-cs-fixer fix"
+    }
+}
