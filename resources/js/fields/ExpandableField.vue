@@ -51,7 +51,15 @@
                 this.openedId = openedId;
             });
             this.$watch('expandableOpened', function (value) {
-                this.expandableRow.classList[value ? 'remove' : 'add']('hidden');
+                if (value) {
+                  if (this.expandableRow.classList.contains('hidden')) {
+                    this.expandableRow.classList['remove']('hidden');
+                  }
+                } else {
+                  if (!this.expandableRow.classList.contains('hidden')) {
+                    this.expandableRow.classList['add']('hidden');
+                  }
+                }
             });
         },
         unmounted() {
@@ -95,10 +103,10 @@
                 return this.field.expandableStoreStatus === 'full';
             },
             expandableFieldParameter() {
-                return `${this.resourceName}_expfield`;
+                return `${this.resourceName}_expfield_${Date.now()}`;
             },
             expandableIdParameter() {
-                return `${this.resourceName}_expid`;
+                return `${this.resourceName}_expid_${Date.now()}`;
             },
             expandableOpened() {
                 return this.openedField == this.field.resourceName && this.openedId == this.resource.id.value;
